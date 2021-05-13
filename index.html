@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de memes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5c3ddfe6b4.js" crossorigin="anonymous">
+    </script>
+</head>
+<body> 
+    <header>
+        <h1 class="titulo">Generador de memes</h1>
+        <div class="options-buttons">
+            <button class="botones" id="imagen">
+                <i class="fas fa-images"></i>
+                Imagen           
+            </button>
+
+            <button class="botones" id="texto">
+                <i class="fas fa-font"></i>
+                Texto           
+            </button>
+
+            <button class="botones" id="oscuro">
+                <i class="fas fa-lightbulb"></i>
+                Modo oscuro           
+            </button>
+        </div>   
+    </header>
+
+        <main class="contenedor1">
+            <div class="top-text">
+                <h3 class="texto-main">TOP TEXT</h3>
+            </div>
+            <div class="imagen"></div>
+            <div class="bottom-text">
+                <h3 class="texto-main">BOTTOM TEXT</h3>
+            </div>
+            <button class="boton-descargar" id="descargar">
+                <i class="fas fa-download"></i>
+                Descargar meme
+            </button>
+        </main>
+
+        <aside class="container-aside">
+            <!--SECCION IMAGEN-->
+            <section class="section-image">
+                <h2>IMAGEN</h2>
+                <div>
+                    <h3>URL</h3>
+                    <input class="input-url" type="text" id="url" >
+                </div>
+
+                <h3 class="margen-50">FONDO</h3>
+                <div class="container-color">   
+                    <div class="caja-color">
+                        <input type="color" id="color-fondo" value="">
+                    </div>
+                    <div class="caja-color">
+                        <select name="caja-opciones-color" id="color-opciones">
+                            <Option value="ni">Ninguno</Option>
+                            <Option value="ac">Aclarar</Option>
+                            <Option value="os">Oscurecer</Option>
+                            <Option value="di">Diferencia</Option>
+                            <Option value="lu">Luminocidad</Option>
+                            <Option value="mu">Multiplicar</Option>
+                        </select>
+                    </div>
+                </div>
+                <h3 class="margen-50">FILTROS</h3>
+                <div class="container-filtros">
+                    <div class="filtros">
+                        <label for="brillo">BRILLO</label>
+                        <input type="range" id="brillo">
+                    </div>
+                    <div class="filtros">
+                        <label for="opacidad">OPACIDAD</label>
+                        <input type="range" id="opacidad">
+                    </div>
+                    <div class="filtros">
+                        <label for="contaste">CONTRASTE</label>
+                        <input type="range" id="contraste">
+                    </div>
+                    <div class="filtros">
+                        <label for="desenfoque">DESENFOQUE</label>
+                        <input type="range" id="desenfoque">
+                    </div>
+                    <div class="filtros">
+                        <label for="escalaDeGrises">ESCALA DE GRISES</label>
+                        <input type="range" id="escalaDeGrises">
+                    </div>
+                    <div class="filtros">
+                        <label for="sepia">SEPIA</label>
+                        <input type="range" id="sepia">
+                    </div>
+                    <div class="filtros">
+                        <label for="hue">HUE</label>
+                        <input type="range" id="hue">
+                    </div>
+                    <div class="filtros">
+                        <label for="saturado">SATURADO</label>
+                        <input type="range" id="saturado">
+                    </div>
+                    <div class="filtros">
+                        <label for="negativo">NEGATIVO</label>
+                        <input type="range" id="negativo">
+                    </div> 
+                </div>
+                <button class="boton-filtros" id="botonFiltros">
+                    Reestablecer filtros
+                </button>
+            </section>
+            <!--SECCION TEXTO-->
+            <section class="section-image">
+                <h2>TEXTO</h2>
+                <div class="margen-50">
+                    <h3>SUPERIOR</h3>
+                    <textarea name="texto" id="textoSuperior" cols="40" rows="2" placeholder="TOP TEXT"></textarea>
+                </div>
+                <div class="check">
+                    <input type="checkbox" id="checkSuperior">
+                    <label for="checkSuperior">Sin texto superior</label>
+                </div>
+
+                <div class="margen-50">
+                    <h3>INFERIOR</h3>
+                    <textarea name="texto" id="textoInferior" cols="40" rows="2" placeholder="BOTTOM TEXT"></textarea>
+                </div>
+                <div class="check">
+                    <input type="checkbox" id="checkInferior">
+                    <label for="checkInferior">Sin texto inferior</label>
+                </div>
+
+                <h3 class="margen-50">FUENTE</h3>
+                <div>
+                    <select name="caja-opciones-color" id="color-opciones">
+                        <Option value="ar">Arial</Option>
+                        <Option value="ab">Arial Black</Option>
+                        <Option value="cs">Comic Sans</Option>
+                        <Option value="im">Impact</Option>
+                        <Option value="he">Helvetica</Option>
+                        <Option value="ve">Verdana</Option>
+                    </select>
+                </div>
+                <div class="alineacion">
+                    <div>
+                        <input type="number" id="inputNumber" class="input-numer">
+                    </div>
+                    <div>
+                        <button class="boton-icono">
+                            <i class="fas fa-align-left icono-alig"></i>
+                        </button>
+                        <button class="boton-icono">
+                            <i class="fas fa-align-center icono-alig"></i>
+                        </button>
+                        <button class="boton-icono">
+                            <i class="fas fa-align-right icono-alig"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </aside>
+        
+    
+</body>
+</html>
