@@ -6,7 +6,6 @@
     box-sizing: border-box;
     font-family: Montserrat, sans serif;
 }
-
 body{
     display: flex;
     flex-direction: column;
@@ -26,13 +25,12 @@ input, textarea{
     color:black;
 }
 /* HEADER */
-
 .main-header{  
     width: 80%;
     background-color: #2d719e;
     display: block;
     justify-content: center;
-    padding-top: 20px;
+    padding: 10px;
 }
 .dark .main-header {
     background-color: rgb(1, 4, 22);
@@ -62,6 +60,9 @@ input, textarea{
 .dark .botones {
     background-color:#03395e ;
     color: white;
+}
+i{
+    padding: 5px;
 }
 /* MAIN */
 .texto-main {     
