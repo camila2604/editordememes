@@ -8,36 +8,32 @@
     <script src="https://kit.fontawesome.com/5c3ddfe6b4.js" crossorigin="anonymous">
     </script>
 </head>
-<body> 
+<body class="claro"> 
     <header>
     <header class="main-header">
         <h1 class="titulo">Generador de memes</h1>
         <div class="options-buttons">
-            <button class="botones" id="imagen">
+            <button class="botones" id="botonImagen">
                 <i class="fas fa-images"></i>
                 Imagen           
             </button>
-            <button class="botones" id="texto">
+            <button class="botones" id="botonTexto">
                 <i class="fas fa-font"> </i>
                 Texto           
             </button>
-
-            <button class="botones" id="modoOscuro" aria-label="Cambia a modo oscuro">
-                <i class="fas fa-lightbulb"> </i>
-                <span class="nombre-boton">Modo oscuro </span>
-            <button class="botones" id="modoClaro" aria-label="Cambia a modo claro">
-                <i class="fas fa-lightbulb"> </i>
-                <span class="nombre-boton">Modo claro</span>
+            <button class="botones" type="button" id="claro-oscuro" aria-label="Cambia a modo claro">
+                <span class="claro" id="dia" ><i class="fas fa-lightbulb"> </i> Modo claro</span>
+                <span class="oscuro " id="noche"><i class="fas fa-lightbulb"> </i> Modo oscuro </span>
             </button>
         </div>   
     </header>
         <main class="contenedor1">
             <div class="top-text">
-                <h3 class="texto-main">TOP TEXT</h3>
+                <h3 class="texto-main" id="h3Top">TOP TEXT</h3>
             </div>
             <div class="imagen" id="imagenID"></div>
             <div class="bottom-text">
-                <h3 class="texto-main">BOTTOM TEXT</h3>
+                <h3 class="texto-main" id="h3Bottom">BOTTOM TEXT</h3>
             </div>
             <button class="boton-descargar" id="descargar">
                 <i class="fas fa-download"></i>
@@ -46,7 +42,7 @@
         </main>
         <aside class="container-aside">
             <!--SECCION IMAGEN-->
-            <section class="section-image">
+            <section class="section-image" id="sectionImage">
                 <h2>IMAGEN</h2>
                 <div>
                     <h3>URL</h3>
@@ -59,12 +55,12 @@
                     </div>
                     <div >
                         <select class="caja-color" name="caja-opciones-color" id="color-opciones">
-                            <Option value="ni">Ninguno</Option>
-                            <Option value="ac">Aclarar</Option>
-                            <Option value="os">Oscurecer</Option>
-                            <Option value="di">Diferencia</Option>
-                            <Option value="lu">Luminocidad</Option>
-                            <Option value="mu">Multiplicar</Option>
+                            <Option value="normal">Ninguno</Option>
+                            <Option value="lighten">Aclarar</Option>
+                            <Option value="darken">Oscurecer</Option>
+                            <Option value="difference">Diferencia</Option>
+                            <Option value="luminosity">Luminocidad</Option>
+                            <Option value="mulltiply">Multiplicar</Option>
                         </select>
                     </div>
                 </div>
@@ -112,11 +108,11 @@
                 </button>
             </section>
             <!--SECCION TEXTO-->
-            <section class="section-image">
+            <section class="section-text oculto" id="sectionText">
                 <h2>TEXTO</h2>
                 <div class="margen-30">
                     <h3>SUPERIOR</h3>
-                    <textarea class="sup-inf" name="texto" id="textoSuperior" cols="40" rows="2" placeholder="TOP TEXT"></textarea>
+                    <input type="text" class="sup-inf" name="texto" id="textoSuperior" cols="40" rows="2" placeholder="TOP TEXT">
                 </div>
                 <div class="check">
                     <input type="checkbox" id="checkSuperior">
@@ -124,7 +120,7 @@
                 </div>
                 <div class="margen-30">
                     <h3>INFERIOR</h3>
-                    <textarea class="sup-inf" name="texto" id="textoInferior" cols="40" rows="2" placeholder="BOTTOM TEXT"></textarea>
+                    <input type="text" class="sup-inf" name="texto" id="textoInferior" cols="40" rows="2" placeholder="BOTTOM TEXT">
                 </div>
                 <div class="check">
                     <input type="checkbox" id="checkInferior">

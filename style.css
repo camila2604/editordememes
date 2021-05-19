@@ -61,6 +61,15 @@ input, textarea{
     background-color:#03395e ;
     color: white;
 }
+.oscuro{
+    display: none;
+}
+body.dark .oscuro{
+    display: inline-block;
+} 
+body.dark .claro{
+    display: none;
+}
 i{
     padding: 5px;
 }
@@ -138,6 +147,13 @@ h3 {
 .section-image {
     margin: 5%;
 }
+.section-text {
+    margin: 5%;
+}
+.oculto {
+    display: none;
+}
+
 .input-url {
     width: 200px;
     height: 30px;
