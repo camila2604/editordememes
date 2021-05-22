@@ -6,6 +6,7 @@ const toggleMode = () => {
 }
 prueba.addEventListener('click', toggleMode); 
 
+
 /* Función mostrar/ocultar barra aside texto/imagen*/
 
 const botonImagen = document.getElementById('botonImagen');
@@ -58,7 +59,6 @@ const estilos = () =>{
 }
 botonSelect.addEventListener('input', estilos);
 
-
 // Funcion filtros
 
 const brillo = document.getElementById('brillo');
@@ -72,11 +72,11 @@ const saturado = document.getElementById('saturado');
 const negativo = document.getElementById('negativo');
 
 const filtros = () => {
-    imagenMeme.style.filter=`brightness(${brillo.value}%)
-    opacity(${opacidad.value}%) contrast(${contraste.value}%)
+    imagenMeme.style.filter=`brightness(${brillo.value})
+    opacity(${opacidad.value}) contrast(${contraste.value}%)
     blur(${desenfoque.value}px) grayscale(${grises.value}%)
-    sepia(${sepia.value}%) hue-rotate(${hue.value}deg)
-    saturate(${saturado.value}%) invert(${negativo.value}%)`;
+    sepia(${sepia.value}) hue-rotate(${hue.value}deg)
+    saturate(${saturado.value}%) invert(${negativo.value}%)`
     
 }
 
@@ -100,11 +100,11 @@ const reset = ()=>{
 
 botonReset.addEventListener('click', reset);
 
-// Función texto top y botom
+// Función texto top y bottom
 
 const textoSuperior = document.getElementById('textoSuperior');
 const textoInferior = document.getElementById('textoInferior');
-let h3Top = document.getElementById('h3Top');
+const h3Top = document.getElementById('h3Top');
 const h3Bottom = document.getElementById('h3Bottom');
 
 const topText = () =>{
@@ -121,3 +121,31 @@ const bottomText = () =>{
 
 }
 textoInferior.addEventListener('keyup', bottomText);
+
+// Desaparecer y aparecer texto superior o inferior 
+
+const contenedorTopText = document.getElementById('contenedor-top-text');
+const contenedorBottomText = document.getElementById('contenedor-bottom-text');
+const checkTextoSuperior = document.getElementById('checkSuperior');
+const checkTextoInferior = document.getElementById('checkInferior');
+
+const ocultarTextoSuperior = () => {
+    contenedorTopText.classList.toggle('oculto');
+}
+checkTextoSuperior.addEventListener('click', ocultarTextoSuperior);
+
+const ocultarTextoInferior = () => {
+    contenedorBottomText.classList.toggle('oculto');
+}
+checkTextoInferior.addEventListener('click', ocultarTextoInferior);
+
+// Cambiar fuente
+
+// const h3Top = document.getElementById('h3Top');
+// const h3Bottom = document.getElementById('h3Bottom');
+    const selectFontFamily = document.getElementById('font-family');
+
+const cambiarTextFontFamily = () => {
+    h3Top.style.fontFamily = `(${h3Top}.value)`;
+}
+selectFontFamily.addEventListener('change', cambiarTextFontFamily);
