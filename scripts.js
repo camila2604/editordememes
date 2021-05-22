@@ -6,7 +6,6 @@ const toggleMode = () => {
 }
 prueba.addEventListener('click', toggleMode); 
 
-
 /* Función mostrar/ocultar barra aside texto/imagen*/
 
 const botonImagen = document.getElementById('botonImagen');
@@ -58,6 +57,48 @@ const estilos = () =>{
     imagenMeme.style.backgroundBlendMode = botonSelect.value;
 }
 botonSelect.addEventListener('input', estilos);
+
+
+// Funcion filtros
+
+const brillo = document.getElementById('brillo');
+const opacidad = document.getElementById('opacidad');
+const contraste = document.getElementById('contraste');
+const desenfoque = document.getElementById('desenfoque');
+const grises = document.getElementById('escalaDeGrises');
+const sepia = document.getElementById('sepia');
+const hue = document.getElementById('hue');
+const saturado = document.getElementById('saturado');
+const negativo = document.getElementById('negativo');
+
+const filtros = () => {
+    imagenMeme.style.filter=`brightness(${brillo.value}%)
+    opacity(${opacidad.value}%) contrast(${contraste.value}%)
+    blur(${desenfoque.value}px) grayscale(${grises.value}%)
+    sepia(${sepia.value}%) hue-rotate(${hue.value}deg)
+    saturate(${saturado.value}%) invert(${negativo.value}%)`;
+    
+}
+
+brillo.addEventListener('input', filtros);
+opacidad.addEventListener('input', filtros);
+contraste.addEventListener('input', filtros);
+desenfoque.addEventListener('input', filtros);
+grises.addEventListener('input', filtros);
+sepia.addEventListener('input', filtros);
+hue.addEventListener('input', filtros);
+saturado.addEventListener('input', filtros);
+negativo.addEventListener('input', filtros);
+
+// Filtro boton reset
+
+const botonReset = document.getElementById('botonReset');
+
+const reset = ()=>{
+    imagenMeme.style.filter=`none`;
+}
+
+botonReset.addEventListener('click', reset);
 
 // Función texto top y botom
 

@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editor de memes</title>
+    <!-- Style -->
     <link rel="stylesheet" href="style.css">
+    <!-- Responsive -->
+    <link rel="stylesheet" href="./responsive.css">
+    <!-- Animaciones -->
+    <link rel="stylesheet" href="./animaciones.css">
+    <!-- Iconos -->
     <script src="https://kit.fontawesome.com/5c3ddfe6b4.js" crossorigin="anonymous">
     </script>
 </head>
@@ -68,42 +74,42 @@
                 <div class="container-filtros">
                     <div class="filtros">
                         <label for="brillo">BRILLO</label>
-                        <input type="range" id="brillo">
+                        <input type="range" min="0" max="1" step="0.1" value="1" id="brillo">
                     </div>
                     <div class="filtros">
                         <label for="opacidad">OPACIDAD</label>
-                        <input type="range" id="opacidad">
+                        <input type="range" min="0" max="1" step="0.1" value="1" id="opacidad">
                     </div>
                     <div class="filtros">
                         <label for="contaste">CONTRASTE</label>
-                        <input type="range" id="contraste">
+                        <input type="range" min="100" max="1000" step="1" value="100" id="contraste">
                     </div>
                     <div class="filtros">
                         <label for="desenfoque">DESENFOQUE</label>
-                        <input type="range" id="desenfoque">
+                        <input type="range" min="0" max="10" step="0.1" value="0" id="desenfoque">
                     </div>
                     <div class="filtros">
                         <label for="escalaDeGrises">ESCALA DE GRISES</label>
-                        <input type="range" id="escalaDeGrises">
+                        <input type="range" min="0" max="100" step="1%" value="0" min="0" max="0" step="0.1" value="1" id="escalaDeGrises">
                     </div>
                     <div class="filtros">
                         <label for="sepia">SEPIA</label>
-                        <input type="range" id="sepia">
+                        <input type="range" min="0" max="100" step="1" value="0" id="sepia">
                     </div>
                     <div class="filtros">
                         <label for="hue">HUE</label>
-                        <input type="range" id="hue">
+                        <input type="range" min="0" max="359" step="1" value="0" id="hue">
                     </div>
                     <div class="filtros">
                         <label for="saturado">SATURADO</label>
-                        <input type="range" id="saturado">
+                        <input type="range" min="100" max="1000" step="10" value="100" id="saturado">
                     </div>
                     <div class="filtros">
                         <label for="negativo">NEGATIVO</label>
-                        <input type="range" id="negativo">
+                        <input type="range" min="0" max="1" step="0.1" value="1" id="negativo">
                     </div> 
                 </div>
-                <button class="boton-filtros" id="botonFiltros">
+                <button class="boton-filtros" id="botonReset">
                     Reestablecer filtros
                 </button>
             </section>
@@ -154,7 +160,6 @@
                     </div>
                 </div>
                 <div class="margen-30 alineacion-row">
-                    
                     <div class="alineacion-column">
                         <h3>COLOR</h3>
                         <div class="caja-color">

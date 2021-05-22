@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 *{
     margin: 0px;
     padding: 0px;
@@ -27,7 +26,7 @@ input, textarea{
 /* HEADER */
 .main-header{  
     width: 80%;
-    background-color: #2d719e;
+    background-color: #74bcec;
     display: block;
     justify-content: center;
     padding: 10px;
@@ -42,8 +41,6 @@ input, textarea{
 .options-buttons {
     display: flex;
     flex-wrap:wrap;
-    margin-top: 20px;
-    margin-bottom: 20px;
     justify-content: center;
 }
 .botones {
@@ -51,14 +48,14 @@ input, textarea{
     justify-content: center;
     height: 30px;
     align-items: center;
-    background-color: #8accf8;
-    padding: 0 10px;
-    border-radius: 20px;
+    background-color: transparent;
+    padding:17px 8px;
+    border-radius: 5px;
     border: 1px solid transparent;
-    margin-right: 5px;
+    
 }
 .dark .botones {
-    background-color:#03395e ;
+    background-color: transparent ;
     color: white;
 }
 .oscuro{
@@ -153,7 +150,6 @@ h3 {
 .oculto {
     display: none;
 }
-
 .input-url {
     width: 200px;
     height: 30px;
@@ -235,6 +231,8 @@ option {
     border:none;
     outline: none;
     color: white;
+    width: 250px;
+    height: 40px;
 }
 .dark .sup-inf{
     background-color:#334653;
@@ -244,7 +242,7 @@ option {
 }
 .check {
     margin-top: 5px;
-    font-size: 10px;
+    font-size: 13px;
 }
 .margen-30 {
     margin-top: 30px;
