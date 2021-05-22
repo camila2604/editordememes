@@ -72,12 +72,13 @@ const saturado = document.getElementById('saturado');
 const negativo = document.getElementById('negativo');
 
 const filtros = () => {
-    imagenMeme.style.filter=`brightness(${brillo.value})
-    opacity(${opacidad.value}) contrast(${contraste.value}%)
-    blur(${desenfoque.value}px) grayscale(${grises.value}%)
-    sepia(${sepia.value}) hue-rotate(${hue.value}deg)
-    saturate(${saturado.value}%) invert(${negativo.value}%)`
-    
+    imagenMeme.style.filter=`brightness(${brillo.value}) opacity(${opacidad.value})
+    contrast(${contraste.value}%)
+    blur(${desenfoque.value}px) 
+    grayscale(${grises.value}%)
+    sepia(${sepia.value}%)
+    hue-rotate(${hue.value}deg)
+    saturate(${saturado.value}%) invert(${negativo.value})`
 }
 
 brillo.addEventListener('input', filtros);
