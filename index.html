@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editor de memes</title>
     <!-- Style -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Responsive -->
-    <link rel="stylesheet" href="./responsive.css">
-    <!-- Animaciones -->
-    <link rel="stylesheet" href="./animaciones.css">
+    <link rel="stylesheet" href="styles.css">
     <!-- Iconos -->
     <script src="https://kit.fontawesome.com/5c3ddfe6b4.js" crossorigin="anonymous">
     </script>
+    <!-- Libreria -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body class="claro"> 
     <main class="main">
@@ -36,15 +35,13 @@
         <section class="wrapper-body">
         <div class="imagen" id="imagenID" >
             <p class="top-text" id="contenedor-top-text">
-            <span class="texto-main" id="h3Top">TOP TEXT</span>
+            <span class="texto-main" id="h3-top">TOP TEXT</span>
             </p>
             <div class="imagenMedio" ></div>
-        
             <p class="bottom-text" id="contenedor-bottom-text">
-                <span class="texto-main" id="h3Bottom">BOTTOM TEXT</span>
+                <span class="texto-main" id="h3-bottom">BOTTOM TEXT</span>
             </p>
         </div>
-
         <button class="boton-descargar" id="descargar">
             <i class="fas fa-download"></i>
             Descargar meme
@@ -124,7 +121,7 @@
             <h2>TEXTO</h2>
             <div class="margen-30">
                 <h3>SUPERIOR</h3>
-                <input type="text" class="sup-inf" name="texto" id="textoSuperior" cols="40" rows="2" placeholder="TOP TEXT">
+                <textarea type="text" class="sup-inf" name="texto" id="textoSuperior" cols="40" rows="2">TOP TEXT</textarea>
             </div>
             <div class="check">
                 <input type="checkbox" id="checkSuperior">
@@ -132,7 +129,7 @@
             </div>
             <div class="margen-30">
                 <h3>INFERIOR</h3>
-                <input type="text" class="sup-inf" name="texto" id="textoInferior" cols="40" rows="2" placeholder="BOTTOM TEXT">
+                <textarea type="text" class="sup-inf" name="texto" id="textoInferior" cols="40" rows="2">BOTTOM TEXT</textarea>
             </div>
             <div class="check">
                 <input type="checkbox" id="checkInferior">
@@ -140,27 +137,28 @@
             </div>
             <h3 class="margen-30">FUENTE</h3>
             <div>
-                <select class="color-fuente" name="caja-opciones-color" id="color-opciones">
-                    <Option value="ar">Arial</Option>
-                    <Option value="ab">Arial Black</Option>
-                    <Option value="cs">Comic Sans</Option>
-                    <Option value="im">Impact</Option>
-                    <Option value="he">Helvetica</Option>
-                    <Option value="ve">Verdana</Option>
+                <select class="font-family" name="font-family" id="font-family">
+                    <option value="Arial">Arial</option>
+                    <option value="ArialBlack">Arial Black</option>
+                    <option value="ComicSans">Comic Sans</option>
+                    <option value="Impact">Impact</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Verdana">Verdana</option>
                 </select>
             </div>
             <div class="alineacion-row">
                 <div>
-                    <input type="number" id="inputNumber" class="input-numer">
+                    <input type="number" id="inputNumber" class="input-numer" min="12" max="100" value="40">
+                    <label for="input Number"></label>
                 </div>
                 <div>
-                    <button class="boton-icono">
+                    <button class="boton-icono" id="align-left">
                         <i class="fas fa-align-left icono-alig"></i>
                     </button>
-                    <button class="boton-icono">
+                    <button class="boton-icono" id="align-center">
                         <i class="fas fa-align-center icono-alig"></i>
                     </button>
-                    <button class="boton-icono">
+                    <button class="boton-icono" id="align-right">
                         <i class="fas fa-align-right icono-alig"></i>
                     </button>
                 </div>
@@ -169,18 +167,18 @@
                 <div class="alineacion-column">
                     <h3>COLOR</h3>
                     <div class="caja-color">
-                        <input type="color" id="color-fondo" value="">
+                        <input type="color" id="color-letra" value="">
                     </div>
                 </div>
                 <div class="alineacion-column">
                     <h3>FONDO</h3>
                     <div class="caja-color">
-                        <input type="color" id="color-fondo" value="">
+                        <input type="color" id="letra-fondo" value="">
                     </div>
                 </div>
             </div>
             <div class="check">
-                <input type="checkbox" id="checkInferior">
+                <input type="checkbox" id="check-tansparente">
                 <label for="checkInferior">Fondo transparente</label>
             </div>
             <h3>CONTORNO</h3>

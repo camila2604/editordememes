@@ -224,6 +224,14 @@ option {
 }
 
 /*FUENTE*/
+.font-family {
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #93c5e5;
+    border: none;
+    outline: none;
+}
 .color-fuente{
     width: 200px;
     height: 30px;
@@ -325,4 +333,59 @@ option {
     border:none;
     outline: none;
     color: white;
+}
+/* ANIMACIONES */
+
+/*Botones header*/
+.botones:hover{
+    transition-duration:0.1s;
+    background-color: #467a9c;
+}
+
+/*Boton descargar*/
+.boton-descargar:hover{
+    transition-duration:0.1s;
+    background-color: #0c3c5a;
+}
+
+/*botones-input aside IMAGEN*/
+.input-url:hover{
+    transition-duration:0.1s;
+    background-color: #629fc5;
+}
+.caja-color:hover{
+    transition-duration:0.1s;
+    background-color: #629fc5;
+} 
+
+/*Boton reestablecer filtros*/
+.boton-filtros:hover{
+    transition-duration:0.1s;
+    background-color: #3274a0;
+}
+
+/*botones-input aside TEXTO*/
+.sup-inf:hover{
+    transition-duration:0.1s;
+    background-color: #629fc5;
+}
+.color-fuente:hover{
+    transition-duration:0.1s;
+    background-color: #629fc5;
+} 
+.input-numer:hover{
+    transition-duration:0.1s;
+    background-color: #629fc5;
+}
+.boton-icono:hover{
+    transition-duration:0.1s;
+    background-color: #629fc5;
+}
+.boton-contorno:hover{
+    transition-duration:0.1s;
+    background-color: #629fc5;
+}
+.input-espaciado:hover{
+    transition-duration:0.1s;
+    background-color: #629fc5; 
 }

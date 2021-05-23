@@ -7,7 +7,7 @@ const toggleMode = () => {
 prueba.addEventListener('click', toggleMode); 
 
 
-/* Función mostrar/ocultar barra aside texto/imagen*/
+// Función mostrar/ocultar barra aside texto/imagen
 
 const botonImagen = document.getElementById('botonImagen');
 const botonTexto = document.getElementById('botonTexto');
@@ -27,7 +27,7 @@ const functionAsideImagen = () => {
 botonImagen.addEventListener('click', functionAsideImagen);
 
 
-/* Función url */ 
+// Función url  
 const imagenURL = document.getElementById('url');
 const imagenMeme = document.getElementById('imagenID');
 
@@ -38,7 +38,7 @@ function imagenURLMeme() {
 imagenURL.addEventListener('change', imagenURLMeme)
 
 
-/* Funcion aplicacion de color de fondo */ 
+// Funcion aplicacion de color de fondo 
 
 let inputColorFondo = document.getElementById('color-fondo');
 
@@ -50,7 +50,7 @@ const colorFondo = () =>{
 inputColorFondo.addEventListener('input', colorFondo);
 
 
-/* Funcion seleccionar estilo color */
+// Funcion seleccionar estilo color 
 
 const botonSelect = document.getElementById('color-opciones');
 
@@ -105,21 +105,18 @@ botonReset.addEventListener('click', reset);
 
 const textoSuperior = document.getElementById('textoSuperior');
 const textoInferior = document.getElementById('textoInferior');
-const h3Top = document.getElementById('h3Top');
-const h3Bottom = document.getElementById('h3Bottom');
+const h3Top = document.getElementById('h3-top');
+const h3Bottom = document.getElementById('h3-bottom');
 
 const topText = () =>{
     const textoTop = textoSuperior.value;
     h3Top.innerHTML=textoTop;
-
 }
 textoSuperior.addEventListener('keyup', topText);
-
 
 const bottomText = () =>{
     const textoBottom = textoInferior.value;
     h3Bottom.innerHTML=textoBottom;
-
 }
 textoInferior.addEventListener('keyup', bottomText);
 
@@ -140,13 +137,88 @@ const ocultarTextoInferior = () => {
 }
 checkTextoInferior.addEventListener('click', ocultarTextoInferior);
 
-// Cambiar fuente
+// Cambiar fuente - Font Family   FALTA EL COMIC 
 
-// const h3Top = document.getElementById('h3Top');
-// const h3Bottom = document.getElementById('h3Bottom');
-    const selectFontFamily = document.getElementById('font-family');
+const selectFontFamily = document.getElementById('font-family');
 
 const cambiarTextFontFamily = () => {
-    h3Top.style.fontFamily = `(${h3Top}.value)`;
+   // const selectFont = selectFontFamily.value;
+    h3Top.style.fontFamily = selectFontFamily.value;
+    h3Bottom.style.fontFamily = selectFontFamily.value;
+
+
+   // h3Top.style.fontFamily = `(${h3Top}.value)`; `${"selectFont"}`;
 }
 selectFontFamily.addEventListener('change', cambiarTextFontFamily);
+
+// Cambiar tamaño NO FUNCIONA
+
+const inputNumberID = document.getElementById('inputNumber')
+
+const cambiarInputNumber = () => {
+
+    h3Top.style.fontSize = inputNumberID.value;
+    h3Bottom.style.fontSize = inputNumberID.value;
+}
+
+inputNumberID.addEventListener('change', cambiarInputNumber);
+
+
+// Cambiar alineación NO FUNCIONA
+
+const alignLeft = document.getElementById('align-left')
+const alignCenter = document.getElementById('align-center')
+const alignRight = document.getElementById('align-right')
+
+const changeToAlignLeft = () => {
+    h3Top.style.textAlign = `alignLeft`;
+    h3Bottom.style.textAlign = alignLeft;
+}
+
+alignLeft.addEventListener('click', changeToAlignLeft)
+
+
+// Color letras NO FUNCIONA
+
+// let colorTextoMain = document.getElementsByClassName('texto-main');
+
+// const colorTexto = () =>{
+//     colorTextoMain.style.color = colorTextoMain.value;
+// }
+// colorTextoMain.addEventListener('input', colorTexto);
+
+
+// Color fondo letras
+let inputLetraFondo = document.getElementById('letra-fondo');
+
+const letraFondo = () =>{
+    contenedorTopText.style.backgroundColor = inputLetraFondo.value;
+    contenedorBottomText.style.backgroundColor = inputLetraFondo.value;
+}
+inputLetraFondo.addEventListener('input', letraFondo);
+
+
+// Transparent FUNCIONA PERO BORRA TAMBIEN EL TEXTO
+
+// let checkTransparente =  document.getElementById('check-tansparente');
+
+// const fondoTransparente = () => {
+//     contenedorTopText.classList.toggle('oculto');
+//     contenedorBottomText.classList.toggle('oculto');
+// }
+// checkTransparente.addEventListener('click', fondoTransparente);
+
+
+
+
+// Boton descarga
+
+const download = document.getElementById('descargar');
+
+download.addEventListener("click",() =>{
+    domtoimage.toBlob(imagenMeme)
+        .then(function (blob) {
+            window.saveAs(blob, 'meme.png');
+        });
+});
+
