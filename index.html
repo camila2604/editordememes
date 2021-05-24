@@ -34,13 +34,23 @@
         </header>
         <section class="wrapper-body">
         <div class="imagen" id="imagenID" >
-            <p class="top-text" id="contenedor-top-text">
+            <!-- <p class="top-text" id="contenedor-top-text">
             <span class="texto-main" id="h3-top">TOP TEXT</span>
             </p>
             <div class="imagenMedio" ></div>
             <p class="bottom-text" id="contenedor-bottom-text">
-                <span class="texto-main" id="h3-bottom">BOTTOM TEXT</span>
+            <span class="texto-main" id="h3-bottom">BOTTOM TEXT</span>
+            </p> -->
+
+            <p class="top-text" id="contenedor-top-text">
+                TOP TEXT
             </p>
+            <div class="imagenMedio" ></div>
+            <p class="bottom-text" id="contenedor-bottom-text">
+                BOTTOM TEXT
+            </p>
+
+
         </div>
         <button class="boton-descargar" id="descargar">
             <i class="fas fa-download"></i>
@@ -139,8 +149,8 @@
             <div>
                 <select class="font-family" name="font-family" id="font-family">
                     <option value="Arial">Arial</option>
-                    <option value="ArialBlack">Arial Black</option>
-                    <option value="ComicSans">Comic Sans</option>
+                    <option value="calibri">Calibri</option>
+                    <option value="TimesNewRoman">Times New Roman</option>
                     <option value="Impact">Impact</option>
                     <option value="Helvetica">Helvetica</option>
                     <option value="Verdana">Verdana</option>
@@ -148,7 +158,7 @@
             </div>
             <div class="alineacion-row">
                 <div>
-                    <input type="number" id="inputNumber" class="input-numer" min="12" max="100" value="40">
+                    <input type="number" id="inputNumber" class="input-numer" min="1" max="300" value="30">
                     <label for="input Number"></label>
                 </div>
                 <div>
@@ -195,11 +205,11 @@
             </div>  
             <h3>ESPACIADO</h3>
             <div>
-                <input type="number" id="espaciado" class="input-espaciado">
+                <input type="number" min="10" max="50" value="35" id="espaciado" class="input-espaciado">
             </div> 
             <h3>INTERLINEADO</h3>
             <div>
-                <select name="caja-opciones-color" id="interlineado" class="input-espaciado">
+                <select name="caja-opciones-color" value="" id="interlineado" class="input-espaciado">
                     <Option value="0.8">0.8</Option>
                     <Option value="1">1</Option>
                     <Option value="1.2">1.2</Option>

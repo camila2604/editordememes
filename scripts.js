@@ -1,4 +1,4 @@
-//boton modo claro / modo oscuro
+// ----------Modo claro / modo oscuro----------
 const prueba = document.getElementById('claro-oscuro');
 
 const toggleMode = () => {
@@ -6,8 +6,7 @@ const toggleMode = () => {
 }
 prueba.addEventListener('click', toggleMode); 
 
-
-// Función mostrar/ocultar barra aside texto/imagen
+// ----------Aside imagen/texto----------
 
 const botonImagen = document.getElementById('botonImagen');
 const botonTexto = document.getElementById('botonTexto');
@@ -27,7 +26,8 @@ const functionAsideImagen = () => {
 botonImagen.addEventListener('click', functionAsideImagen);
 
 
-// Función url  
+// ----------Función url---------- 
+
 const imagenURL = document.getElementById('url');
 const imagenMeme = document.getElementById('imagenID');
 
@@ -38,7 +38,7 @@ function imagenURLMeme() {
 imagenURL.addEventListener('change', imagenURLMeme)
 
 
-// Funcion aplicacion de color de fondo 
+// ---------Color de fondo del meme---------- 
 
 let inputColorFondo = document.getElementById('color-fondo');
 
@@ -50,7 +50,7 @@ const colorFondo = () =>{
 inputColorFondo.addEventListener('input', colorFondo);
 
 
-// Funcion seleccionar estilo color 
+// ----------Estilo del color----------
 
 const botonSelect = document.getElementById('color-opciones');
 
@@ -59,7 +59,7 @@ const estilos = () =>{
 }
 botonSelect.addEventListener('input', estilos);
 
-// Funcion filtros
+// ----------Funcion filtros----------
 
 const brillo = document.getElementById('brillo');
 const opacidad = document.getElementById('opacidad');
@@ -91,7 +91,7 @@ hue.addEventListener('input', filtros);
 saturado.addEventListener('input', filtros);
 negativo.addEventListener('input', filtros);
 
-// Filtro boton reset
+// ----------Filtro boton reset----------
 
 const botonReset = document.getElementById('botonReset');
 
@@ -101,26 +101,26 @@ const reset = ()=>{
 
 botonReset.addEventListener('click', reset);
 
-// Función texto top y bottom
+// ----------Función texto top y bottom----------
 
 const textoSuperior = document.getElementById('textoSuperior');
 const textoInferior = document.getElementById('textoInferior');
-const h3Top = document.getElementById('h3-top');
-const h3Bottom = document.getElementById('h3-bottom');
+// const h3Top = document.getElementById('h3-top');
+// const h3Bottom = document.getElementById('h3-bottom');
 
 const topText = () =>{
     const textoTop = textoSuperior.value;
-    h3Top.innerHTML=textoTop;
+    contenedorTopText.innerHTML=textoTop;
 }
 textoSuperior.addEventListener('keyup', topText);
 
 const bottomText = () =>{
     const textoBottom = textoInferior.value;
-    h3Bottom.innerHTML=textoBottom;
+    contenedorBottomText.innerHTML=textoBottom;
 }
 textoInferior.addEventListener('keyup', bottomText);
 
-// Desaparecer y aparecer texto superior o inferior 
+// ----------Desaparecer y aparecer texto superior o inferior----------
 
 const contenedorTopText = document.getElementById('contenedor-top-text');
 const contenedorBottomText = document.getElementById('contenedor-bottom-text');
@@ -137,81 +137,130 @@ const ocultarTextoInferior = () => {
 }
 checkTextoInferior.addEventListener('click', ocultarTextoInferior);
 
-// Cambiar fuente - Font Family   FALTA EL COMIC 
+// ----------Font Family----------
+// CAMBIE DOS ESTILOS DE LETRAS POR OTROS DOS QUE 
+// ESTAN GUARDADOS PARA NO TENER QUE IMPORTAR. 
+// SI QUIEREN IMPORTAR HAY QUE MODIFICARLOS
 
 const selectFontFamily = document.getElementById('font-family');
 
 const cambiarTextFontFamily = () => {
-   // const selectFont = selectFontFamily.value;
-    h3Top.style.fontFamily = selectFontFamily.value;
-    h3Bottom.style.fontFamily = selectFontFamily.value;
-
-
-   // h3Top.style.fontFamily = `(${h3Top}.value)`; `${"selectFont"}`;
+    contenedorTopText.style.fontFamily = selectFontFamily.value;
+    contenedorBottomText.style.fontFamily = selectFontFamily.value;
 }
 selectFontFamily.addEventListener('change', cambiarTextFontFamily);
 
-// Cambiar tamaño NO FUNCIONA
+// ------Tamaño de fuente--------- 
+//NO TIENE QUE SALIR DE LOS CONTENEDORES, NI DE EL MEME
 
-const inputNumberID = document.getElementById('inputNumber')
+const inputTamanioLetra = document.getElementById('inputNumber');
 
-const cambiarInputNumber = () => {
-
-    h3Top.style.fontSize = inputNumberID.value;
-    h3Bottom.style.fontSize = inputNumberID.value;
+const cambiarTamanioFuente = () => {
+    contenedorTopText.style.fontSize = `${(inputTamanioLetra.value)}px`;
+    contenedorBottomText.style.fontSize = `${(inputTamanioLetra.value)}px`;
+    //h3Top.style.fontSize = `${(inputTamanioLetra.value)}px`;
+    //h3Bottom.style.fontSize = `${(inputTamanioLetra.value)}px`;
+    
 }
 
-inputNumberID.addEventListener('change', cambiarInputNumber);
+inputTamanioLetra.addEventListener('click', cambiarTamanioFuente);
 
+// -----------------Espaciado ----------------
 
-// Cambiar alineación NO FUNCIONA
+const inputEspaciado = document.getElementById('espaciado');
 
-const alignLeft = document.getElementById('align-left')
-const alignCenter = document.getElementById('align-center')
-const alignRight = document.getElementById('align-right')
-
-const changeToAlignLeft = () => {
-    h3Top.style.textAlign = `alignLeft`;
-    h3Bottom.style.textAlign = alignLeft;
+const cambiarEspaciado = () => {
+    contenedorTopText.style.padding = `${(inputEspaciado.value)}px`;
+    contenedorBottomText.style.padding = `${(inputEspaciado.value)}px`;
 }
 
-alignLeft.addEventListener('click', changeToAlignLeft)
+inputEspaciado.addEventListener('click', cambiarEspaciado);
+
+//---------------------Interlineado-------------
 
 
-// Color letras NO FUNCIONA
-
-// let colorTextoMain = document.getElementsByClassName('texto-main');
-
-// const colorTexto = () =>{
-//     colorTextoMain.style.color = colorTextoMain.value;
-// }
-// colorTextoMain.addEventListener('input', colorTexto);
 
 
-// Color fondo letras
-let inputLetraFondo = document.getElementById('letra-fondo');
+// ----------Alineación----------
+
+const btnAlignLeft = document.getElementById('align-left');
+const btnAlignCenter = document.getElementById('align-center');
+const btnAlignRight = document.getElementById('align-right');
+
+const alignTextLeft = () => {
+    contenedorTopText.style.justifyContent=`flex-start`;
+    contenedorBottomText.style.justifyContent=`flex-start`;
+}
+
+btnAlignLeft.addEventListener('click', alignTextLeft);
+
+const alignTextCenter = () => {
+    contenedorTopText.style.justifyContent=`center`;
+    contenedorBottomText.style.justifyContent=`center`;
+}
+
+btnAlignCenter.addEventListener('click', alignTextCenter);
+
+const alignTextRight = () => {
+    contenedorTopText.style.justifyContent=`flex-end`;
+    contenedorBottomText.style.justifyContent=`flex-end`;
+}
+
+btnAlignRight.addEventListener('click', alignTextRight);
+
+// ----------Color letras----------
+
+const inputColorLetra = document.getElementById('color-letra');
+
+const letraColor = () => {
+    contenedorTopText.style.color= inputColorLetra.value;
+    contenedorBottomText.style.color= inputColorLetra.value;
+    //h3Top.style.color= inputColorLetra.value;
+    //h3Bottom.style.color= inputColorLetra.value;
+}
+inputColorLetra.addEventListener('input', letraColor);
+
+
+// ----------Color fondo letras----------
+const inputLetraFondo = document.getElementById('letra-fondo');
 
 const letraFondo = () =>{
     contenedorTopText.style.backgroundColor = inputLetraFondo.value;
     contenedorBottomText.style.backgroundColor = inputLetraFondo.value;
+    // h3Top.style.backgroundColor = inputLetraFondo.value;
+    // h3Bottom.style.backgroundColor = inputLetraFondo.value;
 }
 inputLetraFondo.addEventListener('input', letraFondo);
 
 
-// Transparent FUNCIONA PERO BORRA TAMBIEN EL TEXTO
+// ----------Transparent----------
+//SACAS LOS ESTILOS, FUNCIONA PERO SI TOCAS LOS COLORES DEL FONDO 
+//APARECE EL FONDO Y NO SE PUEDE SACAR SIN REFRESCAR LA PAGINA
+//ES MEDIO LOCO LO QUE PASA JAJAJA 
 
-// let checkTransparente =  document.getElementById('check-tansparente');
-
-// const fondoTransparente = () => {
-//     contenedorTopText.classList.toggle('oculto');
-//     contenedorBottomText.classList.toggle('oculto');
-// }
-// checkTransparente.addEventListener('click', fondoTransparente);
+const checkTransparente = document.getElementById('check-tansparente');
 
 
+const fondoTransparente = () => {
+    contenedorTopText.classList.toggle('top-text');
+    contenedorBottomText.classList.toggle('bottom-text');
+}
+checkTransparente.addEventListener('click', fondoTransparente)
 
 
-// Boton descarga
+//ESTA ES OTRA OPCION QUE FUNCIONA PERO SACA LOS ESTILOS
+// checkTransparente.addEventListener('change', () =>{
+//     contenedorTopText.classList.toggle('top-text');
+//     contenedorBottomText.classList.toggle('bottom-text');
+// })
+
+
+
+
+
+
+
+// ----------Boton descarga----------
 
 const download = document.getElementById('descargar');
 
@@ -221,4 +270,3 @@ download.addEventListener("click",() =>{
             window.saveAs(blob, 'meme.png');
         });
 });
-
