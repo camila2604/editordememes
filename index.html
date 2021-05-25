@@ -14,11 +14,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body class="claro"> 
+    <!-- MAIN -->
     <main class="main">
         <header class="main-header">
             <h1 class="titulo">Generador de memes</h1>
             <div class="options-buttons">
                 <button class="botones" id="botonImagen">
+                    <a href="#imagen"></a>
                     <i class="fas fa-images"></i>
                     Imagen           
                 </button>
@@ -34,23 +36,13 @@
         </header>
         <section class="wrapper-body">
         <div class="imagen" id="imagenID" >
-            <!-- <p class="top-text" id="contenedor-top-text">
-            <span class="texto-main" id="h3-top">TOP TEXT</span>
-            </p>
-            <div class="imagenMedio" ></div>
-            <p class="bottom-text" id="contenedor-bottom-text">
-            <span class="texto-main" id="h3-bottom">BOTTOM TEXT</span>
-            </p> -->
-
+            
             <p class="top-text" id="contenedor-top-text">
-                TOP TEXT
-            </p>
+                TOP TEXT</p>
             <div class="imagenMedio" ></div>
             <p class="bottom-text" id="contenedor-bottom-text">
                 BOTTOM TEXT
             </p>
-
-
         </div>
         <button class="boton-descargar" id="descargar">
             <i class="fas fa-download"></i>
@@ -58,9 +50,11 @@
         </button>
     </section>
     </main>
-    <aside class="container-aside">
-        
+    <!-- ASIDE -->
+    <aside class="container-aside" id="aside-cerrar">
+        <div class="botonCerrar"><button class="cruz" id="">X</button></div>
         <!--SECCION IMAGEN-->
+        <a name="imagen"></a>
         <section class="section-image" id="sectionImage">
             <h2>IMAGEN</h2>
             <div>
@@ -79,10 +73,12 @@
                         <Option value="darken">Oscurecer</Option>
                         <Option value="difference">Diferencia</Option>
                         <Option value="luminosity">Luminocidad</Option>
-                        <Option value="mulltiply">Multiplicar</Option>
+                        <Option value="multiply">Multiplicar</Option>
                     </select>
                 </div>
             </div>
+            <!-- FILTROS -->
+            <form action="">
             <h3 class="margen-30">FILTROS</h3>
             <div class="container-filtros">
                 <div class="filtros">
@@ -122,9 +118,10 @@
                     <input type="range" min="0" max="1" step="0.1" value="0" id="negativo">
                 </div> 
             </div>
-            <button class="boton-filtros" id="botonReset">
+            <button class="boton-filtros" id="botonReset" type="reset">
                 Reestablecer filtros
             </button>
+        </form>
         </section>
         <!--SECCION TEXTO-->
         <section class="section-text oculto" id="sectionText">
@@ -193,13 +190,13 @@
             </div>
             <h3>CONTORNO</h3>
             <div class="margin-30">
-                <button class="boton-contorno">
+                <button class="boton-contorno" id="btnNinguno">
                     Ninguno
                 </button>
-                <button class="boton-contorno">
+                <button class="boton-contorno" id="btnClaro">
                     Claro
                 </button>
-                <button class="boton-contorno">
+                <button class="boton-contorno" id="btnOscuro">
                     Oscuro
                 </button>
             </div>  
@@ -209,13 +206,13 @@
             </div> 
             <h3>INTERLINEADO</h3>
             <div>
-                <select name="caja-opciones-color" value="" id="interlineado" class="input-espaciado">
-                    <Option value="0.8">0.8</Option>
-                    <Option value="1">1</Option>
-                    <Option value="1.2">1.2</Option>
-                    <Option value="1.5">1.5</Option>
-                    <Option value="2">2</Option>
-                    <Option value="2.5">2.5</Option>
+                <select name="caja-opciones-color" id="interlineado" class="input-espaciado">
+                    <Option value="i0.8">0.8</Option>
+                    <Option value="i1">1</Option>
+                    <Option value="i1.2">1.2</Option>
+                    <Option value="i1.5">1.5</Option>
+                    <Option value="i2">2</Option>
+                    <Option value="i2.5">2.5</Option>
                 </select>
             </div>         
         </section>

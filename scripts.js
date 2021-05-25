@@ -61,6 +61,8 @@ botonSelect.addEventListener('input', estilos);
 
 // ----------Funcion filtros----------
 
+//HACE EL EFECTO SOBRE TODO EL MEME Y TIENE QUE SER SOBRE LA IMAGEN
+
 const brillo = document.getElementById('brillo');
 const opacidad = document.getElementById('opacidad');
 const contraste = document.getElementById('contraste');
@@ -72,13 +74,15 @@ const saturado = document.getElementById('saturado');
 const negativo = document.getElementById('negativo');
 
 const filtros = () => {
-    imagenMeme.style.filter=`brightness(${brillo.value}) opacity(${opacidad.value})
+    imagenMeme.style.filter=`brightness(${brillo.value}) 
+    opacity(${opacidad.value})
     contrast(${contraste.value}%)
     blur(${desenfoque.value}px) 
     grayscale(${grises.value}%)
     sepia(${sepia.value}%)
     hue-rotate(${hue.value}deg)
-    saturate(${saturado.value}%) invert(${negativo.value})`
+    saturate(${saturado.value}%) 
+    invert(${negativo.value})`
 }
 
 brillo.addEventListener('input', filtros);
@@ -98,15 +102,12 @@ const botonReset = document.getElementById('botonReset');
 const reset = ()=>{
     imagenMeme.style.filter=`none`;
 }
-
 botonReset.addEventListener('click', reset);
 
 // ----------Función texto top y bottom----------
 
 const textoSuperior = document.getElementById('textoSuperior');
 const textoInferior = document.getElementById('textoInferior');
-// const h3Top = document.getElementById('h3-top');
-// const h3Bottom = document.getElementById('h3-bottom');
 
 const topText = () =>{
     const textoTop = textoSuperior.value;
@@ -138,9 +139,6 @@ const ocultarTextoInferior = () => {
 checkTextoInferior.addEventListener('click', ocultarTextoInferior);
 
 // ----------Font Family----------
-// CAMBIE DOS ESTILOS DE LETRAS POR OTROS DOS QUE 
-// ESTAN GUARDADOS PARA NO TENER QUE IMPORTAR. 
-// SI QUIEREN IMPORTAR HAY QUE MODIFICARLOS
 
 const selectFontFamily = document.getElementById('font-family');
 
@@ -151,18 +149,14 @@ const cambiarTextFontFamily = () => {
 selectFontFamily.addEventListener('change', cambiarTextFontFamily);
 
 // ------Tamaño de fuente--------- 
-//NO TIENE QUE SALIR DE LOS CONTENEDORES, NI DE EL MEME
+//QUEDA DENTRO DE LOS CONTENEDORES PERO SE SALE DEL MEME
 
 const inputTamanioLetra = document.getElementById('inputNumber');
 
 const cambiarTamanioFuente = () => {
     contenedorTopText.style.fontSize = `${(inputTamanioLetra.value)}px`;
     contenedorBottomText.style.fontSize = `${(inputTamanioLetra.value)}px`;
-    //h3Top.style.fontSize = `${(inputTamanioLetra.value)}px`;
-    //h3Bottom.style.fontSize = `${(inputTamanioLetra.value)}px`;
-    
 }
-
 inputTamanioLetra.addEventListener('click', cambiarTamanioFuente);
 
 // -----------------Espaciado ----------------
@@ -173,12 +167,42 @@ const cambiarEspaciado = () => {
     contenedorTopText.style.padding = `${(inputEspaciado.value)}px`;
     contenedorBottomText.style.padding = `${(inputEspaciado.value)}px`;
 }
-
 inputEspaciado.addEventListener('click', cambiarEspaciado);
 
 //---------------------Interlineado-------------
 
+const selectInterlineado = document.getElementById('interlineado');
 
+const cambiarInterlineado = (event) => {
+    const alturaValue = event.target.value;
+    switch (alturaValue) {
+        case "i0.8":
+            contenedorTopText.style.lineHeight= '0.8';
+            contenedorBottomText.style.lineHeight= '0.8';
+            break;
+        case "i1":
+            contenedorTopText.style.lineHeight= '1';
+            contenedorBottomText.style.lineHeight= '1';
+            break;
+        case "i1.2":
+            contenedorTopText.style.lineHeight= '1.2';
+            contenedorBottomText.style.lineHeight= '1.2';
+            break;
+        case "i1.5":
+            contenedorTopText.style.lineHeight= '1.5';
+            contenedorBottomText.style.lineHeight= '1.5';
+            break;
+        case "i2":
+            contenedorTopText.style.lineHeight= '2';
+            contenedorBottomText.style.lineHeight= '2';
+            break;
+        case "i2.5":
+            contenedorTopText.style.lineHeight= '2.5';
+            contenedorBottomText.style.lineHeight= '2.5';
+            break;
+    }
+}
+selectInterlineado.addEventListener('change', cambiarInterlineado);
 
 
 // ----------Alineación----------
@@ -215,8 +239,6 @@ const inputColorLetra = document.getElementById('color-letra');
 const letraColor = () => {
     contenedorTopText.style.color= inputColorLetra.value;
     contenedorBottomText.style.color= inputColorLetra.value;
-    //h3Top.style.color= inputColorLetra.value;
-    //h3Bottom.style.color= inputColorLetra.value;
 }
 inputColorLetra.addEventListener('input', letraColor);
 
@@ -227,40 +249,58 @@ const inputLetraFondo = document.getElementById('letra-fondo');
 const letraFondo = () =>{
     contenedorTopText.style.backgroundColor = inputLetraFondo.value;
     contenedorBottomText.style.backgroundColor = inputLetraFondo.value;
-    // h3Top.style.backgroundColor = inputLetraFondo.value;
-    // h3Bottom.style.backgroundColor = inputLetraFondo.value;
 }
 inputLetraFondo.addEventListener('input', letraFondo);
 
 
 // ----------Transparent----------
-//SACAS LOS ESTILOS, FUNCIONA PERO SI TOCAS LOS COLORES DEL FONDO 
-//APARECE EL FONDO Y NO SE PUEDE SACAR SIN REFRESCAR LA PAGINA
-//ES MEDIO LOCO LO QUE PASA JAJAJA 
 
 const checkTransparente = document.getElementById('check-tansparente');
 
-
 const fondoTransparente = () => {
-    contenedorTopText.classList.toggle('top-text');
-    contenedorBottomText.classList.toggle('bottom-text');
+    if (checkTransparente.checked) {
+        contenedorTopText.style.backgroundColor= 'transparent';
+        contenedorBottomText.style.backgroundColor= 'transparent';
+    }
+    else {
+        contenedorTopText.style.backgroundColor = 'white';
+        contenedorBottomText.style.backgroundColor= 'white';
 }
-checkTransparente.addEventListener('click', fondoTransparente)
-
-
-//ESTA ES OTRA OPCION QUE FUNCIONA PERO SACA LOS ESTILOS
-// checkTransparente.addEventListener('change', () =>{
-//     contenedorTopText.classList.toggle('top-text');
-//     contenedorBottomText.classList.toggle('bottom-text');
-// })
+}
+checkTransparente.addEventListener('click', fondoTransparente);
 
 
 
+//-------------------CONTORNO------------------------//
+
+const btnNinguno = document.getElementById('btnNinguno');
+const btnClaro = document.getElementById('btnClaro');
+const btnOscuro = document.getElementById('btnOscuro');
+// Ninguno
+const contornoNinguno = () => {
+    contenedorTopText.style.textShadow= 'none';
+    contenedorBottomText.style.textShadow= 'none';
+}
+
+btnNinguno.addEventListener('click', contornoNinguno);
+// Claro
+const contornoClaro = () => {
+    contenedorTopText.style.textShadow= 'rgb(255 255 255) 2px 2px, rgb(255 255 255) -2px 2px, rgb(255 255 255) 2px -2px, rgb(255 255 255) -2px -2px';
+    contenedorBottomText.style.textShadow= 'rgb(255 255 255) 2px 2px, rgb(255 255 255) -2px 2px, rgb(255 255 255) 2px -2px, rgb(255 255 255) -2px -2px';
+}
+btnClaro.addEventListener('click', contornoClaro);
+
+// Oscuro
+const contornoOscuro = () => {
+    contenedorTopText.style.textShadow= 'rgb(0 0 0) 2px 2px, rgb(0 0 0) -2px 2px, rgb(0 0 0) 2px -2px, rgb(0 0 0) -2px -2px';
+    contenedorBottomText.style.textShadow= 'rgb(0 0 0) 2px 2px, rgb(0 0 0) -2px 2px, rgb(0 0 0) 2px -2px, rgb(0 0 0) -2px -2px';
+}
+btnOscuro.addEventListener('click', contornoOscuro);
 
 
 
 
-// ----------Boton descarga----------
+// -----------------Boton descarga-------------------
 
 const download = document.getElementById('descargar');
 
@@ -270,3 +310,4 @@ download.addEventListener("click",() =>{
             window.saveAs(blob, 'meme.png');
         });
 });
+

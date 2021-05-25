@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
 *{
     margin: 0px;
     padding: 0px;
@@ -81,57 +80,40 @@ i{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    flex-basis: 1;
+    flex-basis: 1; 
 }
 .top-text {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 15vh;
+    padding: 30px;
     background-color: white;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 900;
     color:black;
     text-align: center; 
 }
-
-
-/*.alineacion-texto-left .top-text{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-}
-.alineacion-texto-center{
-    justify-content: center;
-}
-.alineacion-texto-right{
-    justify-content: flex-end;
-}*/
 .imagen {
     width: 500px;
-    height: 70vh;
+    height: 73vh;
     background-color: black;
     display: flex;
     flex-direction: column;
     background-size: cover;
     background-position:center;
-    
 }
 .imagenMedio {
     width: 100%;
-    height: 70vh;
+    height: 73vh;
     opacity: 0.5;
-    
-    
 }
 .bottom-text {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 15vh;
+    padding: 35px;
     background-color: white;
     font-size: 30px;
     font-weight: 900;
@@ -169,11 +151,25 @@ h3 {
     top: 0;
     right: 0;
 }
-
 .dark .container-aside {
     background-color: #1c3a4e;
     color: white;
 }
+
+/*Boton para cerrar*/
+.botonCerrar{
+    display: flex;
+    justify-content:flex-end;
+    align-items: flex-end;
+}
+.cruz{
+    /*display: none;*/
+    width: 25px;
+    background-color: transparent;
+    border:transparent;
+}
+
+
 .section-image {
     margin: 5%;
 }
@@ -227,6 +223,7 @@ option {
     color:black;
 }
 /* FILTROS */
+
 .filtros {
     display: flex;
     flex-direction: column;
@@ -245,6 +242,20 @@ option {
 }
 
 /*FUENTE*/
+.sup-inf{
+    background-color:#93c5e5;
+    border:none;
+    outline: none;
+    color: white;
+    width: 250px;
+    height: 40px;
+}
+.dark .sup-inf{
+    background-color:#334653;
+    border:none;
+    outline: none;
+    color: white;
+}
 .font-family {
     width: 200px;
     height: 30px;
@@ -252,6 +263,12 @@ option {
     background-color: #93c5e5;
     border: none;
     outline: none;
+}
+.dark .font-family{
+    background-color:#334653;
+    border:none;
+    outline: none;
+    color: white;
 }
 .color-fuente{
     width: 200px;
@@ -267,20 +284,6 @@ option {
     outline: none;
     color:white;
 }
-.sup-inf{
-    background-color:#93c5e5;
-    border:none;
-    outline: none;
-    color: white;
-    width: 250px;
-    height: 40px;
-}
-.dark .sup-inf{
-    background-color:#334653;
-    border:none;
-    outline: none;
-    color: white;
-}
 .check {
     margin-top: 5px;
     font-size: 13px;
@@ -288,7 +291,6 @@ option {
 .margen-30 {
     margin-top: 30px;
 }
-
 .input-numer {
     width: 100px;
     height: 30px;
@@ -340,6 +342,7 @@ option {
     border:none;
     outline: none;
     color: white;
+    
 }
 .input-espaciado {
     width: 200px;
@@ -387,6 +390,10 @@ option {
 
 /*botones-input aside TEXTO*/
 .sup-inf:hover{
+    transition-duration:0.1s;
+    background-color: #629fc5;
+}
+.font-family:hover{
     transition-duration:0.1s;
     background-color: #629fc5;
 }
