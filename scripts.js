@@ -73,6 +73,11 @@ const hue = document.getElementById('hue');
 const saturado = document.getElementById('saturado');
 const negativo = document.getElementById('negativo');
 
+//const imagenMedio = document.getElementsByClassName('imagenMedio');
+//const imagenMedio = document.querySelector("imagenMedio");
+//const imagenMedio = document.getElementById('imagen-medio')
+
+
 const filtros = () => {
     imagenMeme.style.filter=`brightness(${brillo.value}) 
     opacity(${opacidad.value})
@@ -85,15 +90,15 @@ const filtros = () => {
     invert(${negativo.value})`
 }
 
-brillo.addEventListener('input', filtros);
-opacidad.addEventListener('input', filtros);
-contraste.addEventListener('input', filtros);
-desenfoque.addEventListener('input', filtros);
-grises.addEventListener('input', filtros);
-sepia.addEventListener('input', filtros);
-hue.addEventListener('input', filtros);
-saturado.addEventListener('input', filtros);
-negativo.addEventListener('input', filtros);
+brillo.addEventListener('change', filtros);
+opacidad.addEventListener('change', filtros);
+contraste.addEventListener('change', filtros);
+desenfoque.addEventListener('change', filtros);
+grises.addEventListener('change', filtros);
+sepia.addEventListener('change', filtros);
+hue.addEventListener('change', filtros);
+saturado.addEventListener('change', filtros);
+negativo.addEventListener('change', filtros);
 
 // ----------Filtro boton reset----------
 
@@ -149,7 +154,7 @@ const cambiarTextFontFamily = () => {
 selectFontFamily.addEventListener('change', cambiarTextFontFamily);
 
 // ------Tamaño de fuente--------- 
-//QUEDA DENTRO DE LOS CONTENEDORES PERO SE SALE DEL MEME
+
 
 const inputTamanioLetra = document.getElementById('inputNumber');
 
@@ -271,7 +276,7 @@ checkTransparente.addEventListener('click', fondoTransparente);
 
 
 
-//-------------------CONTORNO------------------------//
+//-----------CONTORNO-----------
 
 const btnNinguno = document.getElementById('btnNinguno');
 const btnClaro = document.getElementById('btnClaro');
@@ -298,9 +303,7 @@ const contornoOscuro = () => {
 btnOscuro.addEventListener('click', contornoOscuro);
 
 
-
-
-// -----------------Boton descarga-------------------
+// ----------Boton descarga----------
 
 const download = document.getElementById('descargar');
 
@@ -311,3 +314,17 @@ download.addEventListener("click",() =>{
         });
 });
 
+
+//----------Responsive----------
+// ASIDE
+const botonCerrarImagen = document.getElementById("cerrar-imagen");
+const botonCerrarTexto = document.getElementById("cerrar-texto");
+
+const cerrarAside = () => {
+    sectionImage.style.zIndex = "0";
+    sectionText.style.zIndex = "0";
+    sectionImage.style.visibility = "hidden";
+    sectionText.style.visibility = "hidden";
+    };
+botonCerrarImagen.addEventListener("click", cerrarAside);
+botonCerrarTexto.addEventListener("click", cerrarAside);

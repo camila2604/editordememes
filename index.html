@@ -20,7 +20,6 @@
             <h1 class="titulo">Generador de memes</h1>
             <div class="options-buttons">
                 <button class="botones" id="botonImagen">
-                    <a href="#imagen"></a>
                     <i class="fas fa-images"></i>
                     Imagen           
                 </button>
@@ -39,7 +38,7 @@
             
             <p class="top-text" id="contenedor-top-text">
                 TOP TEXT</p>
-            <div class="imagenMedio" ></div>
+            <div class="imagenMedio" id="imagen-medio"></div>
             <p class="bottom-text" id="contenedor-bottom-text">
                 BOTTOM TEXT
             </p>
@@ -52,9 +51,9 @@
     </main>
     <!-- ASIDE -->
     <aside class="container-aside" id="aside-cerrar">
-        <div class="botonCerrar"><button class="cruz" id="">X</button></div>
+        
         <!--SECCION IMAGEN-->
-        <a name="imagen"></a>
+        <div class="botonCerrar"><button class="cruz" id="cerrar-imagen">X</button></div>
         <section class="section-image" id="sectionImage">
             <h2>IMAGEN</h2>
             <div>
@@ -124,6 +123,7 @@
         </form>
         </section>
         <!--SECCION TEXTO-->
+        <div class="botonCerrar"><button class="cruz" id="cerrar-texto">X</button></div>
         <section class="section-text oculto" id="sectionText">
             <h2>TEXTO</h2>
             <div class="margen-30">
