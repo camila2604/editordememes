@@ -53,9 +53,8 @@ const saturado = document.getElementById('saturado');
 const negativo = document.getElementById('negativo');
 
 //const imagenMedio = document.getElementsByClassName('imagenMedio');
-//const imagenMedio = document.querySelector("imagenMedio");
-//const imagenMedio = document.getElementById('imagen-medio')
-
+//const imagenMedio = document.querySelector(".imagenMedio");
+//const imagenMedio = document.getElementById('imagen-medio');
 
 const filtros = () => {
     imagenMeme.style.filter=`brightness(${brillo.value}) 
@@ -78,15 +77,7 @@ sepia.addEventListener('input', filtros);
 hue.addEventListener('input', filtros);
 saturado.addEventListener('input', filtros);
 negativo.addEventListener('input', filtros);
-brillo.addEventListener('change', filtros);
-opacidad.addEventListener('change', filtros);
-contraste.addEventListener('change', filtros);
-desenfoque.addEventListener('change', filtros);
-grises.addEventListener('change', filtros);
-sepia.addEventListener('change', filtros);
-hue.addEventListener('change', filtros);
-saturado.addEventListener('change', filtros);
-negativo.addEventListener('change', filtros);
+
 
 // ----------Filtro boton reset----------
 
@@ -130,8 +121,6 @@ const cambiarTextFontFamily = () => {
 selectFontFamily.addEventListener('change', cambiarTextFontFamily);
 
 // ------Tamaño de fuente--------- 
-//QUEDA DENTRO DE LOS CONTENEDORES PERO SE SALE DEL MEME
-
 
 const inputTamanioLetra = document.getElementById('inputNumber');
 
@@ -228,7 +217,6 @@ checkTransparente.addEventListener('click', fondoTransparente);
 
 
 
-//-------------------CONTORNO------------------------//
 //-----------CONTORNO-----------
 
 const btnNinguno = document.getElementById('btnNinguno');
@@ -255,8 +243,6 @@ btnOscuro.addEventListener('click', contornoOscuro);
 
 
 
-
-// -----------------Boton descarga-------------------
 // ----------Boton descarga----------
 
 const download = document.getElementById('descargar');
