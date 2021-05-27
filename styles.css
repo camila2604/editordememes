@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 *{
     margin: 0px;
     padding: 0px;
@@ -80,8 +79,8 @@ i{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /* flex-basis: 1;  */
-}
+    flex-basis: 1; 
+    }
 .top-text {
     display: flex;
     justify-content: center;
@@ -123,7 +122,6 @@ i{
     color:black;
     text-align: center;    
 }
-
 .boton-descargar {
     height: 40px;
     width: 200px;
@@ -133,7 +131,6 @@ i{
     margin: 15px;
     color: aliceblue;
 }
-
 /* ASIDE */
 h2 {
     text-align: center;
@@ -146,47 +143,23 @@ h3 {
 }
 .container-aside {
     flex-basis: 300px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     background-color: #63bbf5;
     overflow-y: auto;
     top: 0;
     right: 0;
+    position: fixed;
 }
 .dark .container-aside {
     background-color: #1c3a4e;
     color: white;
 }
-
 /*Boton para cerrar*/
-.botonCerrar{
-    display: flex;
-    justify-content:flex-end;
-}
 .cruz{
-    /*display: none;*/
-    width: 25px;
-    background-color: transparent;
-    border:transparent;
+    visibility: hidden;
 }
-
-@media screen and (max-width: 760px){
-    .container-aside{
-        width: 100%;
-        position: absolute;
-        overflow:visible;
-        /* visibility: hidden; */
-        }
-    /* #cerrar-imagen {
-        visibility: visible;
-    }
-    #cerrar-texto{
-        visibility: visible;
-    }
-} */
-
-
-
 
 .section-image {
     margin: 5%;
@@ -198,7 +171,7 @@ h3 {
     display: none;
 }
 .input-url {
-    width: 200px;
+    width: 100%;
     height: 30px;
     border-radius: 5px;
     background-color:#93c5e5;
@@ -214,9 +187,10 @@ h3 {
 .alineacion-row {
     display: flex;
     flex-direction: row;
+    /*justify-content: space-between;*/
 }
 .caja-color{
-    width: 110px;
+    width: 100px;
     height: 35px;
     border: 1px solid black;
     background-color:#93c5e5;
@@ -234,6 +208,24 @@ h3 {
     outline: none;
     color:white
     }
+
+.caja-select {
+    width: 100px;
+    height: 35px;
+    border: 1px solid black;
+    background-color:#93c5e5;
+    border:none;
+    outline: none;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.dark .caja-select{
+    background-color:#334653;
+    border:none;
+    outline: none;
+    color:white
+    }
 select {
     color: black;
 }
@@ -241,13 +233,12 @@ option {
     color:black;
 }
 /* FILTROS */
-
 .filtros {
     display: flex;
     flex-direction: column;
     margin: 10px;
     font-size: 10px;
-    
+
 }
 .boton-filtros {
     height: 50px;
@@ -259,15 +250,15 @@ option {
     color: white;
     margin: 15px;
 }
-
 /*FUENTE*/
-.sup-inf{
+.sup-inf {
     background-color:#93c5e5;
     border:none;
     outline: none;
-    color: white;
-    width: 250px;
+    color: #ffffff;
+    width: 100%;
     height: 40px;
+    border-radius: 5px;
 }
 .dark .sup-inf{
     background-color:#334653;
@@ -276,7 +267,7 @@ option {
     color: white;
 }
 .font-family {
-    width: 200px;
+    width: 100%;
     height: 30px;
     border-radius: 5px;
     background-color: #93c5e5;
@@ -290,7 +281,7 @@ option {
     color: white;
 }
 .color-fuente{
-    width: 200px;
+    /*width: 200px;*/
     height: 30px;
     background-color:#93c5e5;
     border:none;
@@ -310,8 +301,15 @@ option {
 .margen-30 {
     margin-top: 30px;
 }
+.flex-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.div-number{
+    width: 50%;
+}
 .input-numer {
-    width: 100px;
     height: 30px;
     margin: 5px 5px 0 0;
     background-color:#93c5e5;
@@ -364,7 +362,7 @@ option {
     
 }
 .input-espaciado {
-    width: 200px;
+    width: 100%;
     height: 30px;
     border-radius: 5px;
     background-color:#93c5e5;
@@ -378,19 +376,16 @@ option {
     color: white;
 }
 /* ANIMACIONES */
-
 /*Botones header*/
 .botones:hover{
     transition-duration:0.1s;
     background-color: #467a9c;
 }
-
 /*Boton descargar*/
 .boton-descargar:hover{
     transition-duration:0.1s;
     background-color: #0c3c5a;
 }
-
 /*botones-input aside IMAGEN*/
 .input-url:hover{
     transition-duration:0.1s;
@@ -400,13 +395,11 @@ option {
     transition-duration:0.1s;
     background-color: #629fc5;
 } 
-
 /*Boton reestablecer filtros*/
 .boton-filtros:hover{
     transition-duration:0.1s;
     background-color: #3274a0;
 }
-
 /*botones-input aside TEXTO*/
 .sup-inf:hover{
     transition-duration:0.1s;
@@ -435,4 +428,42 @@ option {
 .input-espaciado:hover{
     transition-duration:0.1s;
     background-color: #629fc5; 
+}
+
+@media screen and (max-width: 760px){
+    .container-aside{
+        width: 100%;
+        flex-basis: 300px;
+        display: flex;
+        flex-direction: column;
+        background-color: #63bbf5;
+        overflow-y: auto;
+        top: 0;
+        right: 0;
+        position: fixed;
+    }
+    .cruz{
+        display: flex;
+        justify-content: flex-end; 
+        visibility: visible; 
+    }
+    
+    .botonCerrar {
+        background-color: transparent;
+        border:transparent;
+        border: none;
+    }
+    
+    .fa-times-circle {
+        font-size: x-large;
+    }
+    .caja-color {
+        width: 300px;
+    }
+
+    .caja-select {
+        width: 300px;
+    } 
+
+        
 }

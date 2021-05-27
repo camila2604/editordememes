@@ -1,68 +1,47 @@
 // ----------Modo claro / modo oscuro----------
 const prueba = document.getElementById('claro-oscuro');
-
 const toggleMode = () => {
     document.body.classList.toggle("dark");
 }
 prueba.addEventListener('click', toggleMode); 
-
 // ----------Aside imagen/texto----------
-
 const botonImagen = document.getElementById('botonImagen');
 const botonTexto = document.getElementById('botonTexto');
 const sectionImage = document.getElementById('sectionImage');
 const sectionText = document.getElementById('sectionText');
-
 const functionAsideTexto = () => {
     sectionText.classList.remove('oculto');
     sectionImage.classList.add('oculto');
 }
 botonTexto.addEventListener('click', functionAsideTexto);
-
 const functionAsideImagen = () => {
     sectionImage.classList.remove('oculto');
     sectionText.classList.add('oculto');
 }
 botonImagen.addEventListener('click', functionAsideImagen);
-
-
 // ----------Función url---------- 
-
 const imagenURL = document.getElementById('url');
 const imagenMeme = document.getElementById('imagenID');
-
 function imagenURLMeme() {
     let url = imagenURL.value;
     imagenMeme.style.backgroundImage = `url("${url}")`;
 }
 imagenURL.addEventListener('change', imagenURLMeme)
-
-
 // ---------Color de fondo del meme---------- 
-
 let inputColorFondo = document.getElementById('color-fondo');
-
 const colorFondo = () =>{
     
     imagenMeme.style.backgroundColor = inputColorFondo.value;
-
 }
 inputColorFondo.addEventListener('input', colorFondo);
-
-
 // ----------Estilo del color----------
-
 const botonSelect = document.getElementById('color-opciones');
-
 const estilos = () =>{
     imagenMeme.style.backgroundBlendMode = botonSelect.value;
 }
 botonSelect.addEventListener('input', estilos);
-
 // ----------Funcion filtros----------
-
 //HACE EL EFECTO SOBRE TODO EL MEME Y TIENE QUE SER SOBRE LA IMAGEN
-
 const brillo = document.getElementById('brillo');
 const opacidad = document.getElementById('opacidad');
 const contraste = document.getElementById('contraste');
@@ -90,6 +69,15 @@ const filtros = () => {
     invert(${negativo.value})`
 }
 
+brillo.addEventListener('input', filtros);
+opacidad.addEventListener('input', filtros);
+contraste.addEventListener('input', filtros);
+desenfoque.addEventListener('input', filtros);
+grises.addEventListener('input', filtros);
+sepia.addEventListener('input', filtros);
+hue.addEventListener('input', filtros);
+saturado.addEventListener('input', filtros);
+negativo.addEventListener('input', filtros);
 brillo.addEventListener('change', filtros);
 opacidad.addEventListener('change', filtros);
 contraste.addEventListener('change', filtros);
@@ -103,50 +91,38 @@ negativo.addEventListener('change', filtros);
 // ----------Filtro boton reset----------
 
 const botonReset = document.getElementById('botonReset');
-
 const reset = ()=>{
     imagenMeme.style.filter=`none`;
 }
 botonReset.addEventListener('click', reset);
-
 // ----------Función texto top y bottom----------
-
 const textoSuperior = document.getElementById('textoSuperior');
 const textoInferior = document.getElementById('textoInferior');
-
 const topText = () =>{
     const textoTop = textoSuperior.value;
     contenedorTopText.innerHTML=textoTop;
 }
 textoSuperior.addEventListener('keyup', topText);
-
 const bottomText = () =>{
     const textoBottom = textoInferior.value;
     contenedorBottomText.innerHTML=textoBottom;
 }
 textoInferior.addEventListener('keyup', bottomText);
-
 // ----------Desaparecer y aparecer texto superior o inferior----------
-
 const contenedorTopText = document.getElementById('contenedor-top-text');
 const contenedorBottomText = document.getElementById('contenedor-bottom-text');
 const checkTextoSuperior = document.getElementById('checkSuperior');
 const checkTextoInferior = document.getElementById('checkInferior');
-
 const ocultarTextoSuperior = () => {
     contenedorTopText.classList.toggle('oculto');
 }
 checkTextoSuperior.addEventListener('click', ocultarTextoSuperior);
-
 const ocultarTextoInferior = () => {
     contenedorBottomText.classList.toggle('oculto');
 }
 checkTextoInferior.addEventListener('click', ocultarTextoInferior);
-
 // ----------Font Family----------
-
 const selectFontFamily = document.getElementById('font-family');
-
 const cambiarTextFontFamily = () => {
     contenedorTopText.style.fontFamily = selectFontFamily.value;
     contenedorBottomText.style.fontFamily = selectFontFamily.value;
@@ -154,6 +130,7 @@ const cambiarTextFontFamily = () => {
 selectFontFamily.addEventListener('change', cambiarTextFontFamily);
 
 // ------Tamaño de fuente--------- 
+//QUEDA DENTRO DE LOS CONTENEDORES PERO SE SALE DEL MEME
 
 
 const inputTamanioLetra = document.getElementById('inputNumber');
@@ -163,21 +140,15 @@ const cambiarTamanioFuente = () => {
     contenedorBottomText.style.fontSize = `${(inputTamanioLetra.value)}px`;
 }
 inputTamanioLetra.addEventListener('click', cambiarTamanioFuente);
-
 // -----------------Espaciado ----------------
-
 const inputEspaciado = document.getElementById('espaciado');
-
 const cambiarEspaciado = () => {
     contenedorTopText.style.padding = `${(inputEspaciado.value)}px`;
     contenedorBottomText.style.padding = `${(inputEspaciado.value)}px`;
 }
 inputEspaciado.addEventListener('click', cambiarEspaciado);
-
 //---------------------Interlineado-------------
-
 const selectInterlineado = document.getElementById('interlineado');
-
 const cambiarInterlineado = (event) => {
     const alturaValue = event.target.value;
     switch (alturaValue) {
@@ -208,60 +179,41 @@ const cambiarInterlineado = (event) => {
     }
 }
 selectInterlineado.addEventListener('change', cambiarInterlineado);
-
-
 // ----------Alineación----------
-
 const btnAlignLeft = document.getElementById('align-left');
 const btnAlignCenter = document.getElementById('align-center');
 const btnAlignRight = document.getElementById('align-right');
-
 const alignTextLeft = () => {
     contenedorTopText.style.justifyContent=`flex-start`;
     contenedorBottomText.style.justifyContent=`flex-start`;
 }
-
 btnAlignLeft.addEventListener('click', alignTextLeft);
-
 const alignTextCenter = () => {
     contenedorTopText.style.justifyContent=`center`;
     contenedorBottomText.style.justifyContent=`center`;
 }
-
 btnAlignCenter.addEventListener('click', alignTextCenter);
-
 const alignTextRight = () => {
     contenedorTopText.style.justifyContent=`flex-end`;
     contenedorBottomText.style.justifyContent=`flex-end`;
 }
-
 btnAlignRight.addEventListener('click', alignTextRight);
-
 // ----------Color letras----------
-
 const inputColorLetra = document.getElementById('color-letra');
-
 const letraColor = () => {
     contenedorTopText.style.color= inputColorLetra.value;
     contenedorBottomText.style.color= inputColorLetra.value;
 }
 inputColorLetra.addEventListener('input', letraColor);
-
-
 // ----------Color fondo letras----------
 const inputLetraFondo = document.getElementById('letra-fondo');
-
 const letraFondo = () =>{
     contenedorTopText.style.backgroundColor = inputLetraFondo.value;
     contenedorBottomText.style.backgroundColor = inputLetraFondo.value;
 }
 inputLetraFondo.addEventListener('input', letraFondo);
-
-
 // ----------Transparent----------
-
 const checkTransparente = document.getElementById('check-tansparente');
-
 const fondoTransparente = () => {
     if (checkTransparente.checked) {
         contenedorTopText.style.backgroundColor= 'transparent';
@@ -276,6 +228,7 @@ checkTransparente.addEventListener('click', fondoTransparente);
 
 
 
+//-------------------CONTORNO------------------------//
 //-----------CONTORNO-----------
 
 const btnNinguno = document.getElementById('btnNinguno');
@@ -286,7 +239,6 @@ const contornoNinguno = () => {
     contenedorTopText.style.textShadow= 'none';
     contenedorBottomText.style.textShadow= 'none';
 }
-
 btnNinguno.addEventListener('click', contornoNinguno);
 // Claro
 const contornoClaro = () => {
@@ -294,7 +246,6 @@ const contornoClaro = () => {
     contenedorBottomText.style.textShadow= 'rgb(255 255 255) 2px 2px, rgb(255 255 255) -2px 2px, rgb(255 255 255) 2px -2px, rgb(255 255 255) -2px -2px';
 }
 btnClaro.addEventListener('click', contornoClaro);
-
 // Oscuro
 const contornoOscuro = () => {
     contenedorTopText.style.textShadow= 'rgb(0 0 0) 2px 2px, rgb(0 0 0) -2px 2px, rgb(0 0 0) 2px -2px, rgb(0 0 0) -2px -2px';
@@ -303,6 +254,9 @@ const contornoOscuro = () => {
 btnOscuro.addEventListener('click', contornoOscuro);
 
 
+
+
+// -----------------Boton descarga-------------------
 // ----------Boton descarga----------
 
 const download = document.getElementById('descargar');
@@ -317,14 +271,23 @@ download.addEventListener("click",() =>{
 
 //----------Responsive----------
 // ASIDE
-const botonCerrarImagen = document.getElementById("cerrar-imagen");
-const botonCerrarTexto = document.getElementById("cerrar-texto");
+
+const botonCerrarAside = document.getElementById("btn-salir");
+const aside = document.getElementById("aside-cerrar");
+// const botonImagen = document.getElementById('botonImagen');
+// const botonTexto = document.getElementById('botonTexto');
+// const sectionImage = document.getElementById('sectionImage');
+// const sectionText = document.getElementById('sectionText');
+
+const asideAbierto = () => {
+    aside.style = `display:inline`
+}
+
+botonImagen.addEventListener('click', asideAbierto);
+botonTexto.addEventListener('click', asideAbierto);
 
 const cerrarAside = () => {
-    sectionImage.style.zIndex = "0";
-    sectionText.style.zIndex = "0";
-    sectionImage.style.visibility = "hidden";
-    sectionText.style.visibility = "hidden";
-    };
-botonCerrarImagen.addEventListener("click", cerrarAside);
-botonCerrarTexto.addEventListener("click", cerrarAside);
+    aside.style = `display:none`;
+}
+
+botonCerrarAside.addEventListener('click', cerrarAside );
