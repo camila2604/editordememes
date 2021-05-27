@@ -22,6 +22,8 @@ botonImagen.addEventListener('click', functionAsideImagen);
 // ----------Función url---------- 
 const imagenURL = document.getElementById('url');
 const imagenMeme = document.getElementById('imagenID');
+//const imagenMedio = document.getElementById('imagen-medio');
+
 function imagenURLMeme() {
     let url = imagenURL.value;
     imagenMeme.style.backgroundImage = `url("${url}")`;
@@ -40,8 +42,9 @@ const estilos = () =>{
     imagenMeme.style.backgroundBlendMode = botonSelect.value;
 }
 botonSelect.addEventListener('input', estilos);
+
 // ----------Funcion filtros----------
-//HACE EL EFECTO SOBRE TODO EL MEME Y TIENE QUE SER SOBRE LA IMAGEN
+
 const brillo = document.getElementById('brillo');
 const opacidad = document.getElementById('opacidad');
 const contraste = document.getElementById('contraste');
@@ -52,9 +55,6 @@ const hue = document.getElementById('hue');
 const saturado = document.getElementById('saturado');
 const negativo = document.getElementById('negativo');
 
-//const imagenMedio = document.getElementsByClassName('imagenMedio');
-//const imagenMedio = document.querySelector(".imagenMedio");
-//const imagenMedio = document.getElementById('imagen-medio');
 
 const filtros = () => {
     imagenMeme.style.filter=`brightness(${brillo.value}) 
@@ -260,10 +260,6 @@ download.addEventListener("click",() =>{
 
 const botonCerrarAside = document.getElementById("btn-salir");
 const aside = document.getElementById("aside-cerrar");
-// const botonImagen = document.getElementById('botonImagen');
-// const botonTexto = document.getElementById('botonTexto');
-// const sectionImage = document.getElementById('sectionImage');
-// const sectionText = document.getElementById('sectionText');
 
 const asideAbierto = () => {
     aside.style = `display:inline`

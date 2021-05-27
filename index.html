@@ -14,48 +14,52 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body class="claro"> 
+
     <!-- MAIN -->
     <main class="main">
         <header class="main-header">
             <h1 class="titulo">Generador de memes</h1>
+
             <div class="options-buttons">
-                <button class="botones" id="botonImagen">
+                <button class="botones" id="botonImagen" aria-label="Haga click para ingresar a editor de imagen"
                     <a href="#imagen"></a>
                     <i class="fas fa-images"></i>
                     Imagen           
                 </button>
-                <button class="botones" id="botonTexto">
+                <button class="botones" id="botonTexto" aria-label="Haga click para ingresar a editor de texto">
                     <i class="fas fa-font"> </i>
                     Texto           
                 </button>
-                <button class="botones" type="button" id="claro-oscuro" aria-label="Cambia a modo claro">
+                <button class="botones" type="button" id="claro-oscuro" aria-label="Cambia a modo oscuro o claro ">
                     <span class="claro" id="dia" ><i class="fas fa-lightbulb"> </i> Modo oscuro</span>
                     <span class="oscuro " id="noche"><i class="fas fa-lightbulb"> </i> Modo claro</span>
                 </button>
-            </div>   
+            </div>    
         </header>
-        <section class="wrapper-body">
-        <div class="imagen" id="imagenID" >
 
-            <p class="top-text" id="contenedor-top-text">
-                TOP TEXT</p>
-            <div class="imagenMedio" ></div>
-            <div class="imagenMedio" id="imagen-medio"></div>
-            <p class="bottom-text" id="contenedor-bottom-text">
-                BOTTOM TEXT
-            </p>
-        </div>
-        <button class="boton-descargar" id="descargar">
-            <i class="fas fa-download"></i>
-            Descargar meme
-        </button>
+        <section class="wrapper-body">
+            <div class="imagen" id="imagenID" >
+
+                <p class="top-text" id="contenedor-top-text">
+                    TOP TEXT</p>
+            
+                <div class="imagenMedio" id="imagen-medio"></div>
+
+                <p class="bottom-text" id="contenedor-bottom-text">
+                    BOTTOM TEXT
+                </p>
+            </div>
+
+            <button class="boton-descargar" id="descargar" aria-label="Haga click para descargar imagen">
+                <i class="fas fa-download"></i>
+                Descargar meme
+            </button>
     </section>
     </main>
+
     <!-- ASIDE -->
     <aside class="container-aside" id="aside-cerrar">
-        
-        <div class="cruz"><button class="botonCerrar" id="btn-salir"><i class="fas fa-times-circle"></i></button></div>
-
+        <div class="cruz"><button class="botonCerrar" id="btn-salir" aria-label="Cerrar ventana"><i class="fas fa-times-circle"></i></button></div>
 
         <!--SECCION IMAGEN-->
         <a name="imagen"></a>
@@ -64,15 +68,16 @@
             <h2>IMAGEN</h2>
             <div>
                 <h3>URL</h3>
-                <input class="input-url" type="text" id="url" >
+                <input class="input-url" type="text" id="url" aria-label="ingrese url de imagen">
             </div>
+
             <h3 class="margen-30">FONDO</h3>
             <div class="alineacion-row">   
                 <div class="caja-color">
                     <input type="color" id="color-fondo" value="">
                 </div>
                 <div >
-                    <select class="caja-select" name="caja-opciones-color" id="color-opciones">
+                    <select class="caja-select" name="caja-opciones-color" id="color-opciones" aria-label="seleccione color">
                         <Option value="normal">Ninguno</Option>
                         <Option value="lighten">Aclarar</Option>
                         <Option value="darken">Oscurecer</Option>
@@ -82,9 +87,12 @@
                     </select>
                 </div>
             </div>
+
             <!-- FILTROS -->
+
             <form action="">
             <h3 class="margen-30">FILTROS</h3>
+
             <div class="container-filtros">
                 <div class="filtros">
                     <label for="brillo">BRILLO</label>
@@ -123,7 +131,8 @@
                     <input type="range" min="0" max="1" step="0.1" value="0" id="negativo">
                 </div> 
             </div>
-            <button class="boton-filtros" id="botonReset" type="reset">
+
+            <button class="boton-filtros" id="botonReset" type="reset" aria-label="Reestablecer filtros">
                 Reestablecer filtros
             </button>
         </form>
@@ -152,7 +161,7 @@
             </div>
             <h3 class="margen-30">FUENTE</h3>
             <div>
-                <select class="font-family" name="font-family" id="font-family">
+                <select class="font-family" name="font-family" id="font-family" aria-label="Seleccion de fuente">
                     <option value="Arial">Arial</option>
                     <option value="calibri">Calibri</option>
                     <option value="TimesNewRoman">Times New Roman</option>
@@ -167,17 +176,18 @@
                     <label for="input Number"></label>
                 </div>
                 <div class="inputAlineacion">
-                    <button class="boton-icono" id="align-left">
+                    <button class="boton-icono" id="align-left" aria-label="Alinear texto a la izquierda">
                         <i class="fas fa-align-left icono-alig"></i>
                     </button>
-                    <button class="boton-icono" id="align-center">
+                    <button class="boton-icono" id="align-center" aria-label="Alinear texto al centro">
                         <i class="fas fa-align-center icono-alig"></i>
                     </button>
-                    <button class="boton-icono" id="align-right">
+                    <button class="boton-icono" id="align-right" aria-label="Alinear texto a la derecha">
                         <i class="fas fa-align-right icono-alig"></i>
                     </button>
                 </div>
             </div>
+
             <div class="margen-30 alineacion-row">
                 <div class="alineacion-column">
                     <h3>COLOR</h3>
@@ -192,29 +202,34 @@
                     </div>
                 </div>
             </div>
+
             <div class="check">
                 <input type="checkbox" id="check-tansparente">
                 <label for="checkInferior">Fondo transparente</label>
             </div>
+
             <h3>CONTORNO</h3>
+
             <div class="margin-30">
-                <button class="boton-contorno" id="btnNinguno">
+                <button class="boton-contorno" id="btnNinguno" aria-label="Texto sin contorno">
                     Ninguno
                 </button>
-                <button class="boton-contorno" id="btnClaro">
+                <button class="boton-contorno" id="btnClaro" aria-label="Texto con contorno claro">
                     Claro
                 </button>
-                <button class="boton-contorno" id="btnOscuro">
+                <button class="boton-contorno" id="btnOscuro" aria-label="Texto con contorno oscuro">
                     Oscuro
                 </button>
-            </div>  
+            </div>
+            
             <h3>ESPACIADO</h3>
             <div>
                 <input type="number" min="10" max="50" value="35" id="espaciado" class="input-espaciado">
             </div> 
+            
             <h3>INTERLINEADO</h3>
             <div>
-                <select name="caja-opciones-color" id="interlineado" class="input-espaciado">
+                <select name="caja-opciones-color" id="interlineado" class="input-espaciado" aria-label="Seleccion de interlineado">
                     <Option value="i0.8">0.8</Option>
                     <Option value="i1">1</Option>
                     <Option value="i1.2">1.2</Option>
