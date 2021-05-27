@@ -209,11 +209,9 @@ h3 {
     }
 
 .caja-select {
-    /*width: 100px;*/
     height: 35px;
-    border: 1px solid black;
     background-color:#93c5e5;
-    border:none;
+    border:transparent;
     outline: none;
     border-radius: 5px;
     margin: 5px;
@@ -318,7 +316,7 @@ option {
     border:none;
     outline: none;
 }
-.dark .input-numer{
+.dark .input-number{
     background-color:#334653;
     border:none;
     outline: none;
@@ -415,7 +413,7 @@ option {
     transition-duration:0.1s;
     background-color: #629fc5;
 } 
-.input-numer:hover{
+.input-number:hover{
     transition-duration:0.1s;
     background-color: #629fc5;
 }
@@ -452,12 +450,16 @@ option {
     
     .botonCerrar {
         background-color: transparent;
-        border:transparent;
-        border: none;
+        border:none;
+        color:white;
     }
+    
+    #color-opciones{
+        width: 50vw;
+    }
+
     .input-number{
         width: 45vw;
-        /*display: block;*/
     }
     .inputAlineacion{
         margin-left: 10px;
@@ -473,7 +475,7 @@ option {
         width: 300vw;
     }
     #interlineado{
-        width: 90vw;
+        width: 95vw;
     }
     .fa-times-circle {
         font-size: x-large;
@@ -484,9 +486,4 @@ option {
     .caja-fondo{
         width: 80px;
     }
-    .caja-select {
-        width: 80px;
-    }  
-
-        
 }
